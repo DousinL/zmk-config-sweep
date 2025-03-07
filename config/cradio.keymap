@@ -50,29 +50,20 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer {
-            if-layers = <RIG LEF>;
-            then-layer = <TRI>;
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            bindings = <
-&kp Q  &kp W       &kp E        &kp R        &kp T         &kp Y      &kp U        &kp I        &kp O       &kp P
-&kp A  &ht LALT S  &ht LCTRL D  &ht LGUI F   &kp G         &kp H      &ht RGUI J   &ht RCTRL K  &ht RALT L  &kp BSPC
-&kp Z  &kp X       &kp C        &kp V        &kp B         &kp N      &kp M        &kp COMMA    &kp DOT     &kp ENTER
-                                &lt LEF TAB  &kp LSHIFT    &kp SPACE  &lt RIG TAB
-            >;
-        };
-
         windows_layer {
             bindings = <
 &kp Q           &kp W       &kp E               &kp R             &kp T             &kp Y      &kp U              &kp I                &kp O            &kp P
 &ht LEFT_WIN A  &ht LALT S  &ht LEFT_CONTROL D  &ht LEFT_SHIFT F  &kp G             &kp H      &ht RIGHT_SHIFT J  &ht RIGHT_CONTROL K  &ht RIGHT_ALT L  &kp BSPC
 &kp Z           &kp X       &kp C               &kp V             &kp B             &kp N      &kp M              &kp COMMA            &kp DOT          &kp ENTER
-                                                &lt 2 ESC         &ht LSHIFT TAB    &kp SPACE  &lt 3 TAB
+                                                &lt 1 ESC         &ht LSHIFT TAB    &kp SPACE  &lt 2 TAB
             >;
         };
 
@@ -90,13 +81,13 @@
 &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET    &kp AMPS   &kp ASTRK  &kp GRAVE  &kp TILDE
 &kp SEMI  &kp LBKT  &kp LBRC  &kp LPAR  &kp BSLH     &kp MINUS    &kp EQUAL  &kp PIPE   &kp COLON  &kp DQT
 &kp SQT   &kp RBKT  &kp RBRC  &kp RPAR  &kp FSLH     &kp UNDER    &kp MINUS  &kp LT     &kp GT     &kp QMARK
-                              &trans    &tog 5       &bootloader  &trans
+                              &trans    &tog 4       &bootloader  &trans
             >;
         };
 
         tri_layer {
             bindings = <
-&kp F1  &kp F2   &kp F3   &kp F4   &bt BT_SEL 0    &bt BT_SEL 2  &out OUT_TOG   &tog WIN        &kp C_MUTE    &kp C_PREV
+&kp F1  &kp F2   &kp F3   &kp F4   &bt BT_SEL 0    &bt BT_SEL 2  &out OUT_TOG   &trans          &kp C_MUTE    &kp C_PREV
 &kp F5  &kp F6   &kp F7   &kp F8   &bt BT_SEL 1    &bt BT_SEL 3  &kp C_BRI_UP   &studio_unlock  &kp C_VOL_UP  &kp C_PP
 &kp F9  &kp F10  &kp F11  &kp F12  &bt BT_CLR      &bt BT_SEL 4  &kp C_BRI_DEC  &trans          &kp C_VOL_DN  &kp C_NEXT
                           &trans   &trans          &trans        &trans
@@ -105,10 +96,10 @@
 
         mouse {
             bindings = <
-&tog MOUSE  &mkp MB4  &mkp MCLK  &mkp MB5   &trans        &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &tog MOUSE
-&trans      &trans    &trans     &trans     &trans        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
-&trans      &trans    &trans     &trans     &trans        &trans          &mkp MB4        &mkp MCLK     &mkp MB5         &trans
-                                 &kp SPACE  &kp LSHIFT    &mkp LCLK       &mkp RCLK
+&tog 4  &mkp MB4  &mkp MCLK  &mkp MB5   &trans        &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &tog 4
+&trans  &trans    &trans     &trans     &trans        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
+&trans  &trans    &trans     &trans     &trans        &trans          &mkp MB4        &mkp MCLK     &mkp MB5         &trans
+                             &kp SPACE  &kp LSHIFT    &mkp LCLK       &mkp RCLK
             >;
         };
     };
