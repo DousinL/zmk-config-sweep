@@ -100,6 +100,6 @@
 //&trans  &trans    &trans     &trans     &trans        &trans          &mkp MB4        &mkp MCLK     &mkp MB5         &trans
 //                             &kp SPACE  &kp LSHIFT    &mkp LCLK       &mkp RCLK
 //            >;
-        };
+//        };
     };
 };
