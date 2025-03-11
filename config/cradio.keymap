@@ -1,24 +1,25 @@
 // Copyright (c) 2022 The ZMK Contributors
 // SPDX-License-Identifier: MIT
-
 //#define ZMK_MOUSE_DEFAULT_MOVE_VAL 2500  // 600
 //#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
-
 //#include <dt-bindings/zmk/mouse.h>
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+
 //#include <dt-bindings/zmk/pointing.h>
 
 #define WIN 0
 #define NUM 1
 #define SYM 2
 #define TRI 3
+
 //#define MOUSE 4
 
 / {
-//    chosen { zmk,charmap = &charmap_us; };
+    //    chosen { zmk,charmap = &charmap_us; };
 
     behaviors {
         ht: hold_tap {
@@ -32,17 +33,16 @@
             bindings = <&kp>, <&kp>;
         };
 
-//        mmv {
-//            acceleration-exponent = <1>;      // 1
-//            time-to-max-speed-ms = <300>;    // 40
-//            delay-ms = <0>;                   // 0
-//        };
-
-//       msc {
-//            acceleration-exponent = <0>;      // 0
-//            time-to-max-speed-ms = <40>;      // 500
-//            delay-ms = <0>;                   // 10
-//        };
+        //        mmv {
+        //            acceleration-exponent = <1>;      // 1
+        //            time-to-max-speed-ms = <300>;    // 40
+        //            delay-ms = <0>;                   // 0
+        //        };
+        //       msc {
+        //            acceleration-exponent = <0>;      // 0
+        //            time-to-max-speed-ms = <40>;      // 500
+        //            delay-ms = <0>;                   // 10
+        //        };
     };
 
     conditional_layers {
@@ -86,20 +86,20 @@
 
         tri_layer {
             bindings = <
-&kp F1  &kp F2   &kp F3   &kp F4   &bt BT_SEL 0    &bt BT_SEL 2  &out OUT_TOG   &trans          &kp C_MUTE    &kp C_PREV
+&kp F1  &kp F2   &kp F3   &kp F4   &bt BT_SEL 0    &bt BT_SEL 2  &out OUT_TOG   &kp C_SLEEP     &kp C_MUTE    &kp C_PREV
 &kp F5  &kp F6   &kp F7   &kp F8   &bt BT_SEL 1    &bt BT_SEL 3  &kp C_BRI_UP   &studio_unlock  &kp C_VOL_UP  &kp C_PP
 &kp F9  &kp F10  &kp F11  &kp F12  &bt BT_CLR      &bt BT_SEL 4  &kp C_BRI_DEC  &trans          &kp C_VOL_DN  &kp C_NEXT
                           &trans   &trans          &trans        &trans
             >;
         };
 
-//        mouse {
-//            bindings = <
-//&trans  &mkp MB4  &mkp MCLK  &mkp MB5   &trans        &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
-//&trans  &trans    &trans     &trans     &trans        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
-//&trans  &trans    &trans     &trans     &trans        &trans          &mkp MB4        &mkp MCLK     &mkp MB5         &trans
-//                             &kp SPACE  &kp LSHIFT    &mkp LCLK       &mkp RCLK
-//            >;
-//        };
+        //        mouse {
+        //            bindings = <
+        //&trans  &mkp MB4  &mkp MCLK  &mkp MB5   &trans        &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
+        //&trans  &trans    &trans     &trans     &trans        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
+        //&trans  &trans    &trans     &trans     &trans        &trans          &mkp MB4        &mkp MCLK     &mkp MB5         &trans
+        //                             &kp SPACE  &kp LSHIFT    &mkp LCLK       &mkp RCLK
+        //            >;
+        //        };
     };
 };
